@@ -47,7 +47,7 @@ All numbers below were printed by my run of `lab06_harness_says_no.ipynb` (Colab
 3. *Not claim* that the system is "fair" or "unbiased". Blinding makes the after-harness flips zero by construction for the blinded fields; that is not proof the model became fair. Also not claim that the harness stopped injection in general: it stopped the one injection I tested.
 4. *Make it auditable:* every decision, escalation and refusal goes into `decisions.jsonl` with the input hash and the fields shown/withheld.
 
-What is left undone: a bigger sample, a test across prompt wordings, a check of the escalation workload with real reviewers, and a test of my refusal rule on real non-Latin names.
+What is left undone: a bigger sample, a test across prompt wordings, a check of the escalation workload with real reviewers, and a test of my refusal rule on real application data.
 
 **Responsibilities of the institution (the fund):** setting the purpose (only scholarship screening), deciding who reviews escalated cases and how fast, informing applicants that AI is used and how to object, handling appeals, and deciding whether the system is allowed to make final rejections at all.
 
