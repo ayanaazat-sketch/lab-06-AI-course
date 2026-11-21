@@ -1,0 +1,52 @@
+{
+  "harness_controls": [
+    "validate_input",
+    "blind",
+    "refuse",
+    "log",
+    "escalate"
+  ],
+  "format_problems": [],
+  "entries": [
+    {
+      "control": "validate_input",
+      "principle": "Robustness, security and safety",
+      "principle_source": "OECD Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019, amended 3 May 2024; non-binding; Kazakhstan was not in the adherents list when checked on legalinstruments.oecd.org on 21 November 2026), principle 1.4(a)",
+      "instrument": "Law of the Republic of Kazakhstan No. 230-VIII of 17 November 2025 'On Artificial Intelligence' (as in force on 21 November 2026, incl. amendments by Law No. 326-VIII of 24.06.2026)",
+      "provision": "Art. 11(1) (systems must be safe and reliable, excluding unforeseen consequences); Art. 15(2)(2) (owner must ensure security and reliability, including against failures)",
+      "why_here": "Part 1 ran only clean profiles (0 of 400 unparseable), but in Part 4 the bare pipeline screened GPA 9.9 / exam -5 without complaint, so impossible values must be stopped before the model invents a score for them."
+    },
+    {
+      "control": "blind",
+      "principle": "Non-discrimination and equality; fairness",
+      "principle_source": "OECD Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019, amended 3 May 2024; non-binding; Kazakhstan was not in the adherents list when checked on legalinstruments.oecd.org on 21 November 2026), principle 1.2(a)",
+      "instrument": "Law of the Republic of Kazakhstan No. 230-VIII of 17 November 2025 'On Artificial Intelligence'; and Law of the Republic of Kazakhstan No. 94-V of 21 May 2013 'On Personal Data and Their Protection' (as in force on 21 November 2026, incl. amendments by Laws No. 231-VIII of 17.11.2025, No. 256-VIII of 09.01.2026 and No. 326-VIII of 24.06.2026)",
+      "provision": "AI Law Art. 6 (AI systems must exclude discrimination by origin, sex, nationality, language, place of residence or any other circumstance); Personal Data Law Art. 7(9) (data excessive for the purpose must not be processed)",
+      "why_here": "Part 1 found a consistent score shift against regional universities (+2.5 points [+1.1, +4.1], sign p = 0.002) and 4/40 gender flips all in one direction; no flip rate cleared its floor, but name and university are not merit fields, so the model does not need them."
+    },
+    {
+      "control": "refuse",
+      "principle": "Respect for the rule of law and human rights, including privacy and data protection; safeguards against use outside the intended purpose",
+      "principle_source": "OECD Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019, amended 3 May 2024; non-binding; Kazakhstan was not in the adherents list when checked on legalinstruments.oecd.org on 21 November 2026), principle 1.2(a) and 1.2(b)",
+      "instrument": "Law of the Republic of Kazakhstan No. 94-V of 21 May 2013 'On Personal Data and Their Protection' (as in force on 21 November 2026, incl. amendments by Laws No. 231-VIII of 17.11.2025, No. 256-VIII of 09.01.2026 and No. 326-VIII of 24.06.2026); and Law of the Republic of Kazakhstan No. 230-VIII of 17 November 2025 'On Artificial Intelligence' (as in force on 21 November 2026, incl. amendments by Law No. 326-VIII of 24.06.2026)",
+      "provision": "Personal Data Law Art. 7(1) (processing only with consent of the subject or the legal representative), Art. 7(8) (only for specific, predetermined, lawful purposes), Art. 19-1(1) (automated processing that creates or ends rights only with consent); AI Law Art. 6 (no discrimination by nationality or origin, which a 'rank by ethnicity' purpose asks for)",
+      "why_here": "The bare pipeline screened all six Part 4 requests (ethnicity purpose, a 17-year-old, no consent, impossible values, an injected name) and the order probe (10/40 flips from reordering identical lines) shows the model reacts strongly to the form of its input; since name and university are blinded, the free-text field the model actually reads is program, so the injection rule matters most there (tested in the cell after Part 4)."
+    },
+    {
+      "control": "log",
+      "principle": "Accountability (traceability of datasets, processes and decisions)",
+      "principle_source": "OECD Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019, amended 3 May 2024; non-binding; Kazakhstan was not in the adherents list when checked on legalinstruments.oecd.org on 21 November 2026), principle 1.5(b)",
+      "instrument": "Law of the Republic of Kazakhstan No. 230-VIII of 17 November 2025 'On Artificial Intelligence' (as in force on 21 November 2026, incl. amendments by Law No. 326-VIII of 24.06.2026)",
+      "provision": "Art. 15(2)(3) (owner must keep documentation on the system according to its impact on people's rights); Art. 16(1)(4)-(5) (the user may get explanations of results affecting their rights and ask for the data a decision was based on). EU Regulation 2024/1689 (AI Act) Art. 12(1)-(2) used only as a benchmark, it does not bind a Kazakh fund",
+      "why_here": "The divergences I measured are small (2.5-point shifts, 1-4 flips in 40), so they can only be found again later if every decision, escalation and refusal is recorded with the exact input hash, fields shown/withheld, model and prompt version."
+    },
+    {
+      "control": "escalate",
+      "principle": "Human agency and oversight",
+      "principle_source": "OECD Recommendation of the Council on Artificial Intelligence, OECD/LEGAL/0449 (adopted 22 May 2019, amended 3 May 2024; non-binding; Kazakhstan was not in the adherents list when checked on legalinstruments.oecd.org on 21 November 2026), principle 1.2(b) and 1.4(b)",
+      "instrument": "Law of the Republic of Kazakhstan No. 230-VIII of 17 November 2025 'On Artificial Intelligence'; and Law of the Republic of Kazakhstan No. 94-V of 21 May 2013 'On Personal Data and Their Protection' (as in force on 21 November 2026, incl. amendments by Laws No. 231-VIII of 17.11.2025, No. 256-VIII of 09.01.2026 and No. 326-VIII of 24.06.2026)",
+      "provision": "AI Law Art. 8(1) (owner/user must keep constant control over the system), Art. 17(2)(1) (low-autonomy system: the final choice is always made by a person); Personal Data Law Art. 19-1(2)-(3) (the subject may object to automated processing, objection answered within 3 working days)",
+      "why_here": "In Part 1 rejects scored 20-45 and shortlists 45-85; after blinding the scores moved (rejects 20/40, shortlists 60+), so the band was recalibrated to 40-50, and because a wrong rejection costs an applicant most and Art. 17(2)(1) leaves the final choice to a person, every model reject is also escalated (rule 4); a shortlist only passes the applicant to the fund's next, human, review."
+    }
+  ]
+}
