@@ -116,6 +116,12 @@ Closing these would take a larger and multilingual test set, a proxy analysis, s
 
 ## AI-use declaration
 
-I completed the lab myself. I implemented the screening controls, ran the experiments, analysed the results and wrote both reports. The Qwen model in the notebook was the scholarship screener I evaluated.
+I used an AI assistant (Aside, an AI browser agent running a Claude model) as a supporting tool during this assignment. The agent was used in accordance with the assignment guidelines, which permitted the use of AI agents.
 
-I used an AI assistant only to review the completed work. I asked it to compare the figures in my reports with the saved notebook outputs and decision log, and to flag conclusions that the data did not support.
+I personally developed and wrote the prediction cells (PREDICTION_0, 1, 3, 4), reviewed the relevant legal materials, analyzed the requirements, and made the decisions regarding the predictions, blinded fields, refusal and escalation cases, and escalation band.
+
+I also personally read and analyzed the primary legal sources: Kazakhstan’s Law No. 230-VIII “On Artificial Intelligence”, Law No. 94-V “On Personal Data and Their Protection” on adilet.zan.kz, Regulation (EU) 2024/1689 on EUR-Lex, and OECD/LEGAL/0449. The legal analysis and citations were based on these original texts.
+
+Aside was used to assist with the technical workflow, including opening and running the notebook in Google Colab on a T4 GPU, executing code cells, assisting with technical issues, and running the evaluation harness. It also helped organize the CONTROL_REGISTER and structure the REPORT.md.
+
+I reviewed the notebook outputs, checked the results and numerical values included in the submitted documents, and reviewed the final materials. I take responsibility for my work and for being able to explain the predictions, code, methodology, results, and legal references during the oral defense.
